@@ -9,6 +9,9 @@ from reportlab.pdfgen import canvas
 from io import BytesIO
 from fpdf import FPDF
 
+# https://cloud.fdx-ingenieria.com.ar/login
+# msabger@gmail.com 1234
+
 def leer_json(ruta_sensores_id_file):
     """Lee un archivo JSON con datos de sensores."""
     with open(ruta_sensores_id_file, 'r', encoding='utf-8') as file:
@@ -151,7 +154,6 @@ def graficar_variables(nombre, df):
     plt.savefig(img_path, format='png', dpi=100)
     plt.close(fig)
     return img_path
-
 
 def generar_informe(datos_sensores, nombre_pdf="informe_hidrometrico.pdf"):
     """Genera un informe en PDF con los datos de los sensores."""

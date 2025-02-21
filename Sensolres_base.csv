@@ -1,0 +1,22 @@
+Site ID,Denominación,Nombre,FDX ID,Sitecode,Grupo,Propietario,Abrev,Longitud,Latitud,Cero IGN,Tipo,Río,Ubicación
+46,Zemek,Canal Seoane,46,149,Delta,INA,seoane,-58.64,-34.17,-1.047,Hidrometro,Canal Seoane,"R74Q+XH Belén de Escobar, Buenos Aires Province, Argentina"
+58,MiniMinisterio,Mini Ministerio,58,,Delta,INA,MiniMinisterio,,,,Hidrometro,Paraná Mini,
+42,Atucha II - Canal UPA interior,Atucha II,42,,Delta,ATUCHA,AtuchaII,,,-0.556,Hidrometro,Paraná de las Palmas,Canal UPA interior
+43,Atucha UPA int,Atucha UPA,43,151,Delta,ATUCHA,AtuchaUPA,-59.21,-33.96,-0.556,Hidrometro,Paraná de las Palmas,"2QPW+59 Atucha, Provincia de Buenos Aires, Argentina"
+7,Borches,Arroyo Borches,7,1257,Delta,INA,BORCHES,-58.44,-34.08,0.682,Hidrometro,Arroyo Borches,"San Fernando Partido, Buenos Aires Province, Argentina"
+24,ARAUCO VP,Arroyo Martínez,24,1696,Delta,INA,martinez,-58.58,-33.66,,Hidrometro,Arroyo Martínez,"Villa Paranacito, Entre Rios, Argentina"
+55,Carapachay,Arroyo Carapachay,55,1698,Delta,NULL,carapachay,-58.63,-34.36,-1.459,Hidrometro,Arroyo Carapachay,Carapachay
+30,Carabelas,Carabelas,30,5876,Delta,NULL,NULL,-58.84,-34.06,,Hidrometro,Carabelas,"Carabelas, Buenos Aires Province, Argentina"
+48,INTA Delta,INTA Delta,48,6163,Delta,INA-INTA,intadelta,-58.86,-34.18,-0.656,Hidrometro,Paraná de las Palmas,INTA Delta
+57,Toro_,Arroyo Toro,57,6831,Delta,INA-INTA,toro,-58.60,-34.32,-0.266,Hidrometro,Arroyo Toro,Arroyo Toro
+54,Palmas,Palmas,54,6832,Delta,INA-INTA,palmas,-58.54,-34.30,-0.55,Hidrometro,Paraná de las Palmas,Paraná de las Paraná
+56,Guazu,Guazu,56,,Delta,INA-INTA,Guazu,,,-0.55,Hidrometro,Guazu,Paraná Guazú
+3,LasPiedrasLIB,Arroyo Las Piedras,3,1743,ConurbanoSur,INA,LASPIEDRAS,-58.31,-34.74,,Hidrometro,Cuenca Sarandí-Santo Domingo,"República del Líbano 4248, Quilmes Oeste, Buenos Aires, Argentina"
+5,SFranciscoMON,Arroyo San Francisco,5,1744,ConurbanoSur,INA,SANFRAN,-58.32,-34.73,,Hidrometro,Cuenca Sarandí-Santo Domingo,"Montevideo 4487, Bernal Oeste, Provincia de Buenos Aires, Argentina"
+29,LasPiedrasMVD,Arroyo Las Piedras 2,29,5873,ConurbanoSur,Quilmes,LASPIEDRAS2,-58.30,-34.78,,Hidrometro,Cuenca Sarandí-Santo Domingo,"Avenida Gobernador Monteverde 1949-1999, Florencio Varela, Provincia de Buenos Aires, Argentina"
+8,SFranTOR,Arroyo San Francisco 2,8,5874,ConurbanoSur,Quilmes,SFranTOR,-58.32,-34.77,,Hidrometro,Cuenca Sarandí-Santo Domingo,"Calle 896 2200-2298, Quilmes Oeste, Provincia de Buenos Aires, Argentina"
+37,Thevenet (FV),Thevenet FV,37,,ConurbanoSur,Varela,ThevenetFV,,,,Pluviometros,,"Beata Claudina Thevenet 2329, B1888HCI Florencio Varela, Provincia de Buenos Aires, Argentina"
+38,Ing Allan,Ing Allan,38,,ConurbanoSur,INA/Varela,IngAllan,,,,Pluviometros,,"B1891FWQ, Calle 1148 2669 B1891FWQ Ingeniero J. Allan Provincia de Buenos Aires Argentina"
+39,B. Lujan (FV),BLujan FV,39,,ConurbanoSur,INA/Varela,BLujanFV,,,,Pluviometros,,"El Boyero 1251, B1859 Gdor. Costa, Provincia de Buenos Aires, Argentina"
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
