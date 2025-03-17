@@ -23,7 +23,7 @@ def lee_TablaSensores(ruta_csv,Grupo):
         if col not in df.columns:
             df[col] = None  # Si falta una columna, se agrega con valores nulos
     columnas = df.columns
-
+    
     df = df[df['grupo']==Grupo]
 
     # Convertir a la estructura de JSON esperada
@@ -179,7 +179,7 @@ def graficar_variables(nombre, df):
     return img_path
 
 def generar_informe(datos_sensores, TablaResumen, nombre_pdf="informe_hidrometrico"):
-    TablaResumen.to_csv(nombre_pdf+".csv",index=False,encoding = "ISO-8859-1")
+    
     """Genera un informe en PDF con los datos de los sensores."""
     c = canvas.Canvas(nombre_pdf+".pdf", pagesize=letter)
     width, height = letter
@@ -261,13 +261,14 @@ def generar_informe(datos_sensores, TablaResumen, nombre_pdf="informe_hidrometri
 def procesar_datos(sensores):
     """Obtiene los datos de la API para cada sensor y los almacena."""
     datos_sensores = []
-    TablaResumen = pd.DataFrame(columns=["fdx_id", "nombre", "Dias_UltDato", "bateria","Senal_Media", "Bat_Perdida_1S"])
+    TablaResumen = pd.DataFrame()#columns=["fdx_id", "nombre", "Dias_UltDato", "bateria","Senal_Media", "Bat_Perdida_1S"])
     
     for sensor in sensores.keys():
         nombre = sensores[sensor]['nombre']
         fdx_id = sensores[sensor]['fdx_id']
         datos = consultar_api("pabloegarcia@gmail.com", nombre, fdx_id)
         
+        print(nombre)
         if isinstance(datos, pd.DataFrame) and not datos.empty:
             datos['bateria'] = datos['bateria'] / 10
             datos['senal'] = (datos['senal'] / 30 * 100).round(1)
@@ -293,23 +294,41 @@ def procesar_datos(sensores):
                 'id': fdx_id,
                 'nombre': nombre,
                 'datos_json': sensores[sensor],
-                'datos': datos
-            })
+                'datos': datos})
+        else:
+            TablaResumen = pd.concat([TablaResumen, pd.DataFrame([{
+                "fdx_id": fdx_id,
+                "nombre": nombre,
+                # "Dias_UltDato": None,
+                # "Senal_Media": None,
+                # "bateria": None,
+                # "Bat_Perdida_1S": None
+            }])], ignore_index=True)
+            
+            datos_sensores.append({
+                'id': fdx_id,
+                'nombre': nombre,
+                'datos_json': sensores[sensor],
+                'datos': None})
+    print(TablaResumen)    
     TablaResumen = TablaResumen.sort_values(by='fdx_id')
     TablaResumen['Dias_UltDato']=TablaResumen['Dias_UltDato'].round(2)
     TablaResumen['Senal_Media']=TablaResumen['Senal_Media'].round(1)
     TablaResumen['bateria']=TablaResumen['bateria'].round(1)
     TablaResumen['Bat_Perdida_1S']=TablaResumen['Bat_Perdida_1S'].round(1)
 
-    return datos_sensores, TablaResumen
+    TablaResumen.to_csv(nombre_pdf+".csv",index=False,encoding = "ISO-8859-1")
 
+    return datos_sensores, TablaResumen
 
 ruta = os.path.abspath(os.curdir).replace("\\" , "/") + "/"
 ruta_csv = os.path.join(ruta,'Sensolres_base.csv')
-Grupo = 'Delta' # Todos
-nombre_pdf ="SensoresDelta"
+Grupo = 'ConurbanoSur' # Delta ConurbanoSur
+nombre_pdf ="Sensores"+Grupo
 
 if __name__ == "__main__":
     sensores = lee_TablaSensores(ruta_csv,Grupo)
     datos_sensores, TablaResumen = procesar_datos(sensores)
+    # print(datos_sensores)
+    # print(TablaResumen)
     generar_informe(datos_sensores,TablaResumen,nombre_pdf)
